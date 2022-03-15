@@ -1,0 +1,1 @@
+Se asegura el acceso autorizado a todos los sistemas de información de la empresa. Es necesario realizar diversas acciones como controles para evitar el acceso de usuarios no autorizados, controles de entrada, etc.

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba Chart</title>
+	
+	<script type="text/javascript" src="Chart.js"></script>
+	<style type="text/css">
+
+		#myRadar, #myChart{
+			float: left;
+		}
+	</style>
+<script>
+    
+
+
+</script>
+</head>
+<body>
+	<canvas id="myChart" width="400" height="400"></canvas>
+	<canvas id="myRadar" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    	responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var radar = document.getElementById('myRadar').getContext('2d');
+var marksData = {
+  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+  datasets: [{
+    label: "Student A",
+    backgroundColor: "transparent",
+    borderColor: "rgba(200,0,0,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "orange",
+    pointBorderColor: "rgba(200,0,0,0.6)",
+    pointHoverRadius: 10,
+    data: [65, 75, 70, 80, 60, 80]
+  }, {
+    label: "Student B",
+    backgroundColor: "transparent",
+    borderColor: "rgba(0,0,200,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "cornflowerblue",
+    pointBorderColor: "rgba(0,0,200,0.6)",
+    pointHoverRadius: 10,
+    data: [54, 65, 60, 70, 70, 75]
+  }]
+};
+ 
+var chartOptions = {
+	responsive: false,
+  scale: {
+    ticks: {
+      beginAtZero: true,
+      min: 0,
+      max: 100,
+      stepSize: 20
+    },
+    pointLabels: {
+      fontSize: 18
+    }
+  },
+  legend: {
+    position: 'top'
+  }
+};
+var myRadar=new Chart(radar,{
+			type: 'radar',
+    		data: marksData,
+    		options: chartOptions
+
+	});
+</script>
+
+</body>
+</html>
